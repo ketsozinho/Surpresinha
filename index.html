@@ -1,63 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Minha aplicação web</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <h1>Quer casar comigo?!</h1>
-  </body>
-</html>
-
-<!DOCTYPE html>
-<html>
 <head>
-	<title>Minha página</title>
-	<link rel="stylesheet" href="style.css">
+	<title>Proposta de Casamento</title>
+	<style type="text/css">
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		.box {
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background-color: #ccc;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+		#box-sim {
+			top: 0;
+			left: 0;
+		}
+		#box-nao {
+			top: 0;
+			right: 0;
+		}
+		.btn {
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			font-size: 18px;
+			margin-right: 10px;
+			cursor: pointer;
+			background-color: #008CBA;
+			color: #fff;
+		}
+	</style>
 </head>
 <body>
-	<!-- Conteúdo da página -->
+
+	<div class="container">
+		<h1>Você aceita se casar comigo?</h1>
+		<div class="box" id="box-sim"></div>
+		<div class="box" id="box-nao"></div>
+		<button class="btn" onclick="moveBox('box-sim')">Sim</button>
+		<button class="btn" onclick="alert('Tudo bem, eu entendo...')">Não</button>
+	</div>
+
+	<script type="text/javascript">
+		function moveBox(id) {
+			var box = document.getElementById(id);
+			var x = Math.floor(Math.random() * 80);
+			var y = Math.floor(Math.random() * 80);
+			box.style.top = x + "vh";
+			box.style.left = y + "vw";
+		}
+	</script>
+
 </body>
 </html>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Minha página</title>
-</head>
-<body>
-	<!-- Conteúdo da página -->
-	<script src="script.js"></script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Pergunta com Resposta Sim/Não</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
-		<h1></h1>
-		<form>
-			<input type="radio" id="sim" name="resposta" value="sim">
-			<label for="sim">Sim</label>
-			<br>
-			<input type="radio" id="nao" name="resposta" value="nao">
-			<label for="nao">Não</label>
-		</form>
-		<script type="text/javascript" src="script.js"></script>
-<script>
-  const simRadio = document.getElementById("sim");
-  simRadio.addEventListener("change", function() {
-    if (simRadio.checked) {
-      alert("Prometo te amar pra sempre gatinha! <3");
-    }
-  });
-</script>
-
-	</body>
-</html>
-
-
